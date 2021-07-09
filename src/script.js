@@ -7,7 +7,20 @@ import * as dat from 'dat.gui'
  * Base
  */
 // Debug
-const gui = new dat.GUI()
+// const gui = new dat.GUI()
+
+// enter haunted scene
+let canvasEl = document.querySelector('.webgl');
+let btn = document.querySelector('.enter-btn');
+let howToUse = document.querySelector('.howtouse');
+
+if(btn) {
+    btn.addEventListener("click", () => {
+        canvasEl.classList.remove("hidden");
+        howToUse.classList.remove("howtouse");
+        howToUse.classList.add("hidden");
+    });
+};
 
 // Canvas
 const canvas = document.querySelector('canvas.webgl')
@@ -190,16 +203,16 @@ scene.add(floor)
  */
 // Ambient light
 const ambientLight = new THREE.AmbientLight('#b9d5ff', 0.12)
-gui.add(ambientLight, 'intensity').min(0).max(1).step(0.001)
+// gui.add(ambientLight, 'intensity').min(0).max(1).step(0.001)
 scene.add(ambientLight)
 
 // Directional light
 const moonLight = new THREE.DirectionalLight('#b9d5ff', 0.12)
 moonLight.position.set(4, 5, - 2)
-gui.add(moonLight, 'intensity').min(0).max(1).step(0.001)
-gui.add(moonLight.position, 'x').min(- 5).max(5).step(0.001)
-gui.add(moonLight.position, 'y').min(- 5).max(5).step(0.001)
-gui.add(moonLight.position, 'z').min(- 5).max(5).step(0.001)
+// gui.add(moonLight, 'intensity').min(0).max(1).step(0.001)
+// gui.add(moonLight.position, 'x').min(- 5).max(5).step(0.001)
+// gui.add(moonLight.position, 'y').min(- 5).max(5).step(0.001)
+// gui.add(moonLight.position, 'z').min(- 5).max(5).step(0.001)
 scene.add(moonLight)
 
 // door light

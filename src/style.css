@@ -1,19 +1,38 @@
-*
-{
+* {
     margin: 0;
     padding: 0;
 }
 
 html,
-body
-{
+body {
     overflow: hidden;
 }
 
-.webgl
-{
+.canvas {
     position: fixed;
     top: 0;
     left: 0;
     outline: none;
+}
+
+.hidden {
+    display: none;
+    opacity: 0;
+}
+
+.howtouse {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.howtouse h1 {
+    margin: 1rem auto;
+}
+
+.enter-btn {
+    margin: 1rem auto;
+    padding: 5px;
 }
